@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -24,200 +25,10 @@ body {
     margin: 0;
     font-family: "Segoe UI", Arial, sans-serif;
     background:
-        radial-gradient(circle at top right, rgba(22,119,210,0.10), transparent 35%),
-        radial-gradient(circle at bottom left, rgba(20,91,137,0.07), transparent 35%),
+        radial-gradient(circle at top right, rgba(22,119,210,0.08), transparent 35%),
         linear-gradient(135deg, #eef3f8, #f8fafc);
     color: #172033;
     min-height: 100vh;
-    overflow-x: hidden;
-}
-
-
-/* =========================================================
-   WELCOME / STARTUP ANIMATION
-========================================================= */
-
-#welcomeScreen {
-    position: fixed;
-    inset: 0;
-    z-index: 9999;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    background:
-        radial-gradient(circle at center, #145b89 0%, #092b49 42%, #041827 100%);
-
-    color: white;
-    text-align: center;
-
-    animation: welcomeExit 1s ease forwards;
-    animation-delay: 3.2s;
-}
-
-#welcomeScreen::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-
-    background-image:
-        linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px);
-
-    background-size: 35px 35px;
-
-    animation: gridMove 5s linear infinite;
-}
-
-#welcomeScreen::after {
-    content: "";
-    position: absolute;
-
-    width: 260px;
-    height: 260px;
-
-    border-radius: 50%;
-
-    background: rgba(22,119,210,0.25);
-
-    filter: blur(35px);
-
-    animation: welcomeGlow 2s ease-in-out infinite alternate;
-}
-
-.welcome-content {
-    position: relative;
-    z-index: 2;
-
-    width: 90%;
-    max-width: 600px;
-
-    animation: welcomeContent 1.2s ease;
-}
-
-.welcome-icon {
-    font-size: 58px;
-    margin-bottom: 15px;
-
-    animation:
-        gearFloat 2s ease-in-out infinite,
-        gearGlow 1.5s ease-in-out infinite alternate;
-}
-
-.welcome-small {
-    font-size: 12px;
-    letter-spacing: 4px;
-    opacity: 0.75;
-    margin-bottom: 10px;
-}
-
-.welcome-title {
-    font-size: 31px;
-    font-weight: 800;
-    letter-spacing: 1px;
-
-    text-shadow: 0 0 20px rgba(255,255,255,0.25);
-}
-
-.welcome-machine {
-    margin-top: 12px;
-
-    font-size: 17px;
-    font-weight: 600;
-
-    color: #a9ddff;
-}
-
-.welcome-line {
-    width: 0;
-    height: 3px;
-
-    margin: 22px auto;
-
-    border-radius: 10px;
-
-    background: white;
-
-    animation: loadingLine 2.2s ease forwards;
-}
-
-.welcome-loading {
-    font-size: 11px;
-    letter-spacing: 2px;
-    opacity: 0.7;
-}
-
-@keyframes welcomeContent {
-    from {
-        opacity: 0;
-        transform: scale(0.85) translateY(20px);
-    }
-
-    to {
-        opacity: 1;
-        transform: scale(1) translateY(0);
-    }
-}
-
-@keyframes welcomeExit {
-    to {
-        opacity: 0;
-        visibility: hidden;
-        pointer-events: none;
-    }
-}
-
-@keyframes gridMove {
-    from {
-        background-position: 0 0;
-    }
-
-    to {
-        background-position: 35px 35px;
-    }
-}
-
-@keyframes welcomeGlow {
-    from {
-        transform: scale(0.8);
-        opacity: 0.4;
-    }
-
-    to {
-        transform: scale(1.25);
-        opacity: 0.8;
-    }
-}
-
-@keyframes loadingLine {
-    from {
-        width: 0;
-    }
-
-    to {
-        width: 230px;
-    }
-}
-
-@keyframes gearFloat {
-    0%,100% {
-        transform: translateY(0) rotate(0deg);
-    }
-
-    50% {
-        transform: translateY(-8px) rotate(10deg);
-    }
-}
-
-@keyframes gearGlow {
-    from {
-        filter: drop-shadow(0 0 3px rgba(255,255,255,0.2));
-    }
-
-    to {
-        filter: drop-shadow(0 0 18px rgba(95,190,255,0.8));
-    }
 }
 
 
@@ -228,85 +39,40 @@ body {
 .header {
     position: relative;
     overflow: hidden;
-
-    background:
-        linear-gradient(135deg, #092b49, #145b89 55%, #1677d2);
-
+    background: linear-gradient(135deg, #092b49, #145b89 55%, #1677d2);
     color: white;
-
     padding: 32px 20px 55px;
-
     text-align: center;
-
     box-shadow: 0 8px 25px rgba(9,43,73,0.25);
 }
 
+/* Decorative circles */
 
-/* Moving digital grid */
-
-.header::before {
-    content: "";
-
-    position: absolute;
-    inset: 0;
-
-    background-image:
-        linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px);
-
-    background-size: 35px 35px;
-
-    animation: gridMove 7s linear infinite;
-}
-
-
-/* Decorative glow */
-
+.header::before,
 .header::after {
     content: "";
-
     position: absolute;
-
-    width: 280px;
-    height: 280px;
-
     border-radius: 50%;
-
-    right: -100px;
-    top: -130px;
-
-    background: rgba(255,255,255,0.08);
-
-    animation: headerOrb 6s ease-in-out infinite alternate;
+    background: rgba(255,255,255,0.07);
 }
 
-@keyframes headerOrb {
-    from {
-        transform: scale(1) translate(0,0);
-    }
+.header::before {
+    width: 250px;
+    height: 250px;
+    top: -150px;
+    left: -80px;
+}
 
-    to {
-        transform: scale(1.25) translate(-30px,30px);
-    }
+.header::after {
+    width: 320px;
+    height: 320px;
+    bottom: -230px;
+    right: -80px;
 }
 
 .header-content {
     position: relative;
     z-index: 2;
-
-    animation: headerAppear 1.2s ease;
-}
-
-@keyframes headerAppear {
-    from {
-        opacity: 0;
-        transform: translateY(-25px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
 }
 
 .company-name {
@@ -318,79 +84,15 @@ body {
 
 .header h1 {
     margin: 0;
-
     font-size: 30px;
     font-weight: 700;
     letter-spacing: 0.3px;
-
-    animation: titleGlow 3s ease-in-out infinite alternate;
-}
-
-@keyframes titleGlow {
-    from {
-        text-shadow: 0 0 0 rgba(255,255,255,0);
-    }
-
-    to {
-        text-shadow: 0 0 18px rgba(255,255,255,0.25);
-    }
 }
 
 .header p {
     margin: 9px 0 0;
-
     font-size: 14px;
     opacity: 0.88;
-}
-
-
-/* Digital online badge */
-
-.header-status {
-    display: inline-flex;
-
-    align-items: center;
-    gap: 8px;
-
-    margin-top: 16px;
-
-    padding: 7px 13px;
-
-    border: 1px solid rgba(255,255,255,0.22);
-
-    border-radius: 50px;
-
-    background: rgba(255,255,255,0.08);
-
-    font-size: 10px;
-    letter-spacing: 1px;
-}
-
-.header-status-dot {
-    width: 8px;
-    height: 8px;
-
-    border-radius: 50%;
-
-    background: #39e879;
-
-    box-shadow: 0 0 0 0 rgba(57,232,121,0.5);
-
-    animation: onlinePulse 1.8s infinite;
-}
-
-@keyframes onlinePulse {
-    0% {
-        box-shadow: 0 0 0 0 rgba(57,232,121,0.5);
-    }
-
-    70% {
-        box-shadow: 0 0 0 8px rgba(57,232,121,0);
-    }
-
-    100% {
-        box-shadow: 0 0 0 0 rgba(57,232,121,0);
-    }
 }
 
 
@@ -400,11 +102,8 @@ body {
 
 .container {
     max-width: 760px;
-
     margin: -30px auto 30px;
-
     padding: 0 18px;
-
     position: relative;
     z-index: 5;
 }
@@ -415,122 +114,27 @@ body {
 ========================================================= */
 
 .card {
-    position: relative;
-
     background: rgba(255,255,255,0.96);
-
     border: 1px solid rgba(255,255,255,0.9);
-
     border-radius: 20px;
-
     padding: 25px;
-
     margin-bottom: 20px;
 
     box-shadow:
         0 10px 35px rgba(31,41,55,0.10),
         0 2px 8px rgba(31,41,55,0.05);
 
-    overflow: hidden;
-
-    animation: cardEntrance 0.9s ease both;
-
     transition:
-        transform 0.3s ease,
-        box-shadow 0.3s ease;
-}
-
-.card:nth-child(1) {
-    animation-delay: 0.15s;
-}
-
-.card:nth-child(2) {
-    animation-delay: 0.35s;
-}
-
-.card:nth-child(3) {
-    animation-delay: 0.55s;
-}
-
-@keyframes cardEntrance {
-    from {
-        opacity: 0;
-        transform: translateY(35px) scale(0.97);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0) scale(1);
-    }
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
 }
 
 .card:hover {
-    transform: translateY(-4px);
+    transform: translateY(-3px);
 
     box-shadow:
-        0 18px 45px rgba(31,41,55,0.14),
-        0 5px 15px rgba(31,41,55,0.07);
-}
-
-
-/* Animated left edge */
-
-.card::before {
-    content: "";
-
-    position: absolute;
-
-    left: 0;
-    top: 0;
-
-    width: 4px;
-    height: 0;
-
-    background: linear-gradient(
-        to bottom,
-        #1677d2,
-        #22c55e
-    );
-
-    border-radius: 0 5px 5px 0;
-
-    transition: height 0.5s ease;
-}
-
-.card:hover::before {
-    height: 100%;
-}
-
-
-/* Moving shine */
-
-.card::after {
-    content: "";
-
-    position: absolute;
-
-    top: 0;
-    left: -120%;
-
-    width: 70%;
-    height: 100%;
-
-    background: linear-gradient(
-        90deg,
-        transparent,
-        rgba(255,255,255,0.45),
-        transparent
-    );
-
-    transform: skewX(-20deg);
-
-    transition: left 0.8s ease;
-
-    pointer-events: none;
-}
-
-.card:hover::after {
-    left: 140%;
+        0 16px 40px rgba(31,41,55,0.14),
+        0 4px 10px rgba(31,41,55,0.06);
 }
 
 
@@ -540,12 +144,9 @@ body {
 
 .machine-heading {
     display: flex;
-
     align-items: center;
     justify-content: space-between;
-
     gap: 15px;
-
     margin-bottom: 22px;
 }
 
@@ -568,7 +169,6 @@ body {
 
 .status {
     display: inline-flex;
-
     align-items: center;
     gap: 7px;
 
@@ -576,35 +176,18 @@ body {
     color: #138a4b;
 
     padding: 8px 13px;
-
     border-radius: 50px;
 
     font-size: 12px;
     font-weight: 700;
 
     white-space: nowrap;
-
-    animation: statusAppear 1s ease 1s both;
-}
-
-@keyframes statusAppear {
-    from {
-        opacity: 0;
-        transform: scale(0.8);
-    }
-
-    to {
-        opacity: 1;
-        transform: scale(1);
-    }
 }
 
 .status-dot {
     width: 8px;
     height: 8px;
-
     background: #22c55e;
-
     border-radius: 50%;
 
     box-shadow: 0 0 0 4px rgba(34,197,94,0.12);
@@ -613,6 +196,7 @@ body {
 }
 
 @keyframes pulse {
+
     0% {
         box-shadow: 0 0 0 0 rgba(34,197,94,0.35);
     }
@@ -624,93 +208,47 @@ body {
     100% {
         box-shadow: 0 0 0 0 rgba(34,197,94,0);
     }
+
 }
 
 
 /* =========================================================
-   INFORMATION GRID
+   MACHINE INFORMATION GRID
 ========================================================= */
 
 .info {
     display: grid;
-
     grid-template-columns: 1fr 1fr;
-
     gap: 13px;
 }
 
 .info-box {
-    position: relative;
-
     background: linear-gradient(145deg, #f8fafc, #f1f5f9);
 
     border: 1px solid #e6ebf1;
 
     padding: 15px;
-
     border-radius: 13px;
 
-    overflow: hidden;
-
-    transition:
-        transform 0.3s ease,
-        border-color 0.3s ease,
-        box-shadow 0.3s ease;
-}
-
-.info-box::before {
-    content: "";
-
-    position: absolute;
-
-    left: 0;
-    bottom: 0;
-
-    width: 100%;
-    height: 2px;
-
-    background: linear-gradient(
-        90deg,
-        #1677d2,
-        #22c55e
-    );
-
-    transform: scaleX(0);
-
-    transform-origin: left;
-
-    transition: transform 0.3s ease;
-}
-
-.info-box:hover::before {
-    transform: scaleX(1);
+    transition: all 0.2s ease;
 }
 
 .info-box:hover {
     border-color: #b9d8ef;
-
-    transform: translateY(-4px);
-
-    box-shadow: 0 8px 20px rgba(22,119,210,0.08);
+    transform: translateY(-2px);
 }
 
 .label {
     font-size: 11px;
-
     text-transform: uppercase;
-
     letter-spacing: 0.7px;
-
     color: #7a8695;
 }
 
 .value {
     font-weight: 700;
-
     font-size: 15px;
-
     margin-top: 6px;
-
     color: #26374a;
 }
 
@@ -721,11 +259,8 @@ body {
 
 .section-header {
     display: flex;
-
     align-items: center;
-
     gap: 12px;
-
     margin-bottom: 20px;
 }
 
@@ -734,46 +269,25 @@ body {
     height: 43px;
 
     display: flex;
-
     align-items: center;
     justify-content: center;
 
     border-radius: 12px;
 
-    background: linear-gradient(
-        135deg,
-        #e0f2fe,
-        #dbeafe
-    );
+    background: linear-gradient(135deg, #e0f2fe, #dbeafe);
 
     font-size: 21px;
-
-    animation: iconFloat 2.5s ease-in-out infinite;
-}
-
-@keyframes iconFloat {
-    0%,100% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(-5px);
-    }
 }
 
 .section-title {
     font-size: 20px;
-
     font-weight: 700;
-
     color: #12395c;
 }
 
 .section-subtitle {
     font-size: 12px;
-
     color: #7a8695;
-
     margin-top: 3px;
 }
 
@@ -784,9 +298,7 @@ body {
 
 .pm-grid {
     display: grid;
-
     grid-template-columns: 1fr 1fr;
-
     gap: 15px;
 }
 
@@ -799,20 +311,15 @@ body {
 
     overflow: hidden;
 
-    transition:
-        transform 0.3s ease,
-        box-shadow 0.3s ease;
+    transition: transform 0.25s ease;
 }
 
 .pm-box:hover {
-    transform: translateY(-5px);
-
-    box-shadow: 0 10px 25px rgba(31,41,55,0.08);
+    transform: translateY(-3px);
 }
 
 .pm-box::after {
     content: "";
-
     position: absolute;
 
     width: 90px;
@@ -824,27 +331,10 @@ body {
     bottom: -40px;
 
     opacity: 0.12;
-
-    animation: pmCircle 3s ease-in-out infinite alternate;
-}
-
-@keyframes pmCircle {
-    from {
-        transform: scale(1);
-    }
-
-    to {
-        transform: scale(1.3);
-    }
 }
 
 .pm-due {
-    background: linear-gradient(
-        135deg,
-        #fff8e8,
-        #fffdf5
-    );
-
+    background: linear-gradient(135deg, #fff8e8, #fffdf5);
     border: 1px solid #f8df9c;
 }
 
@@ -853,12 +343,7 @@ body {
 }
 
 .pm-done {
-    background: linear-gradient(
-        135deg,
-        #ecfdf5,
-        #f7fffb
-    );
-
+    background: linear-gradient(135deg, #ecfdf5, #f7fffb);
     border: 1px solid #b8ebd0;
 }
 
@@ -868,36 +353,19 @@ body {
 
 .pm-label {
     font-size: 11px;
-
     text-transform: uppercase;
-
     letter-spacing: 0.8px;
-
     color: #7b8794;
-
     margin-bottom: 8px;
 }
 
 .pm-date {
     font-size: 20px;
-
     font-weight: 800;
 }
 
 .pm-due .pm-date {
     color: #b45309;
-
-    animation: dateGlow 2s ease-in-out infinite alternate;
-}
-
-@keyframes dateGlow {
-    from {
-        text-shadow: none;
-    }
-
-    to {
-        text-shadow: 0 0 10px rgba(180,83,9,0.18);
-    }
 }
 
 .pm-done .pm-date {
@@ -906,20 +374,7 @@ body {
 
 .pm-icon {
     font-size: 22px;
-
     margin-bottom: 8px;
-
-    animation: iconBounce 2s ease-in-out infinite;
-}
-
-@keyframes iconBounce {
-    0%,100% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(-3px);
-    }
 }
 
 
@@ -931,7 +386,6 @@ body {
     margin-top: 18px;
 
     display: flex;
-
     align-items: center;
     justify-content: space-between;
 
@@ -940,27 +394,12 @@ body {
     border-radius: 13px;
 
     background: #f0fdf4;
-
     border: 1px solid #bbf7d0;
-
-    animation: completedGlow 3s ease-in-out infinite alternate;
-}
-
-@keyframes completedGlow {
-    from {
-        box-shadow: 0 0 0 rgba(34,197,94,0);
-    }
-
-    to {
-        box-shadow: 0 0 18px rgba(34,197,94,0.10);
-    }
 }
 
 .pm-status-left {
     display: flex;
-
     align-items: center;
-
     gap: 10px;
 }
 
@@ -969,60 +408,26 @@ body {
     height: 31px;
 
     display: flex;
-
     align-items: center;
     justify-content: center;
 
     border-radius: 50%;
 
     background: #22c55e;
-
     color: white;
 
     font-weight: bold;
-
-    animation:
-        checkPop 0.8s ease 1.2s both,
-        checkPulse 2s infinite 2s;
-}
-
-@keyframes checkPop {
-    from {
-        transform: scale(0);
-    }
-
-    70% {
-        transform: scale(1.15);
-    }
-
-    to {
-        transform: scale(1);
-    }
-}
-
-@keyframes checkPulse {
-    0%,100% {
-        box-shadow: 0 0 0 0 rgba(34,197,94,0.25);
-    }
-
-    50% {
-        box-shadow: 0 0 0 7px rgba(34,197,94,0);
-    }
 }
 
 .pm-status-title {
     font-size: 14px;
-
     font-weight: 700;
-
     color: #166534;
 }
 
 .pm-status-text {
     font-size: 11px;
-
     color: #4d7c5b;
-
     margin-top: 2px;
 }
 
@@ -1037,61 +442,36 @@ body {
 
 .manual-icon {
     font-size: 35px;
-
     margin-bottom: 8px;
-
-    animation: bookFloat 2.5s ease-in-out infinite;
-}
-
-@keyframes bookFloat {
-    0%,100% {
-        transform: translateY(0) rotate(0deg);
-    }
-
-    50% {
-        transform: translateY(-7px) rotate(-3deg);
-    }
 }
 
 .manual-title {
     font-size: 19px;
-
     font-weight: 700;
-
     color: #12395c;
 }
 
 .manual-description {
     font-size: 12px;
-
     color: #7a8695;
-
     margin: 5px 0 17px;
 }
 
 .manual-button {
     position: relative;
-
     overflow: hidden;
 
     display: flex;
-
     align-items: center;
     justify-content: center;
-
     gap: 10px;
 
     width: 100%;
 
     text-align: center;
-
     text-decoration: none;
 
-    background: linear-gradient(
-        135deg,
-        #1677d2,
-        #0d5fb3
-    );
+    background: linear-gradient(135deg, #1677d2, #0d5fb3);
 
     color: white;
 
@@ -1100,26 +480,23 @@ body {
     border-radius: 13px;
 
     font-size: 16px;
-
     font-weight: 700;
 
     box-shadow:
         0 8px 18px rgba(22,119,210,0.25);
 
-    transition:
-        transform 0.25s ease,
-        box-shadow 0.25s ease;
+    transition: all 0.25s ease;
 }
 
 .manual-button:hover {
-    transform: translateY(-3px);
+    transform: translateY(-2px);
 
     box-shadow:
-        0 14px 30px rgba(22,119,210,0.35);
+        0 12px 25px rgba(22,119,210,0.32);
 }
 
 .manual-button:active {
-    transform: scale(0.97);
+    transform: scale(0.98);
 }
 
 .manual-button::before {
@@ -1136,56 +513,20 @@ body {
     background: linear-gradient(
         90deg,
         transparent,
-        rgba(255,255,255,0.25),
+        rgba(255,255,255,0.18),
         transparent
     );
 
-    transform: skewX(-20deg);
-
-    animation: buttonShine 3s infinite;
+    transition: left 0.6s ease;
 }
 
-@keyframes buttonShine {
-    0% {
-        left: -100%;
-    }
-
-    35% {
-        left: 130%;
-    }
-
-    100% {
-        left: 130%;
-    }
-}
-
-.manual-button span:first-child {
-    animation: bookSmall 1.5s ease-in-out infinite;
-}
-
-@keyframes bookSmall {
-    0%,100% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(-3px);
-    }
-}
-
-.manual-button span:last-child {
-    transition: transform 0.25s ease;
-}
-
-.manual-button:hover span:last-child {
-    transform: translate(4px,-3px);
+.manual-button:hover::before {
+    left: 130%;
 }
 
 .note {
     font-size: 11px;
-
     color: #8993a0;
-
     margin-top: 10px;
 }
 
@@ -1196,24 +537,9 @@ body {
 
 .footer {
     text-align: center;
-
     font-size: 11px;
-
     color: #7c8794;
-
     padding: 10px 20px 25px;
-
-    animation: footerAppear 1s ease 1s both;
-}
-
-@keyframes footerAppear {
-    from {
-        opacity: 0;
-    }
-
-    to {
-        opacity: 1;
-    }
 }
 
 .footer-line {
@@ -1225,74 +551,6 @@ body {
     border-radius: 5px;
 
     background: #1677d2;
-
-    animation: footerLine 2s ease-in-out infinite alternate;
-}
-
-@keyframes footerLine {
-    from {
-        width: 40px;
-    }
-
-    to {
-        width: 80px;
-    }
-}
-
-
-/* =========================================================
-   BACK TO TOP
-========================================================= */
-
-.back-top {
-    position: fixed;
-
-    right: 18px;
-    bottom: 18px;
-
-    width: 42px;
-    height: 42px;
-
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
-    border-radius: 50%;
-
-    background: #12395c;
-
-    color: white;
-
-    text-decoration: none;
-
-    font-size: 18px;
-
-    box-shadow: 0 8px 20px rgba(9,43,73,0.25);
-
-    z-index: 100;
-
-    animation: topFloat 2s ease-in-out infinite;
-
-    transition:
-        transform 0.25s ease,
-        background 0.25s ease;
-}
-
-.back-top:hover {
-    transform: translateY(-4px);
-
-    background: #1677d2;
-}
-
-@keyframes topFloat {
-    0%,100% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(-4px);
-    }
 }
 
 
@@ -1314,37 +572,18 @@ body {
         font-size: 24px;
     }
 
-    .header p {
-        font-size: 12px;
-    }
-
-    .welcome-title {
-        font-size: 24px;
-    }
-
-    .welcome-machine {
-        font-size: 14px;
-    }
-
-    .welcome-icon {
-        font-size: 48px;
-    }
-
     .container {
         padding: 0 12px;
-
         margin-top: -25px;
     }
 
     .card {
         padding: 19px;
-
         border-radius: 17px;
     }
 
     .machine-heading {
         align-items: flex-start;
-
         flex-direction: column;
     }
 
@@ -1361,10 +600,6 @@ body {
         font-size: 19px;
     }
 
-    .manual-button {
-        font-size: 14px;
-    }
-
 }
 
 
@@ -1378,127 +613,52 @@ body {
         font-size: 21px;
     }
 
-    .company-name {
-        font-size: 12px;
-    }
-
     .card {
         padding: 16px;
-    }
-
-    .welcome-title {
-        font-size: 21px;
-    }
-
-    .manual-button {
-        font-size: 13px;
-        padding: 14px 8px;
-    }
-
-}
-
-
-/* =========================================================
-   REDUCE MOTION FOR ACCESSIBILITY
-========================================================= */
-
-@media (prefers-reduced-motion: reduce) {
-
-    *,
-    *::before,
-    *::after {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        scroll-behavior: auto !important;
-        transition-duration: 0.01ms !important;
     }
 
 }
 
 </style>
-</head>
 
+</head>
 
 <body>
 
 <!-- =======================================================
-     STARTUP / WELCOME SCREEN
-======================================================= -->
-
-<div id="welcomeScreen">
-
-    <div class="welcome-content">
-
-        <div class="welcome-icon">
-            ⚙️
-        </div>
-
-        <div class="welcome-small">
-            WELCOME TO
-        </div>
-
-        <div class="welcome-title">
-            MACHINE DIGITAL PASSPORT
-        </div>
-
-        <div class="welcome-machine">
-            GLUING CELL-01 &nbsp; | &nbsp; HL-01
-        </div>
-
-        <div class="welcome-line"></div>
-
-        <div class="welcome-loading">
-            INITIALIZING DIGITAL ASSET...
-        </div>
-
-    </div>
-
-</div>
-
-
-<!-- =======================================================
      HEADER
-======================================================= -->
+======================================================== -->
 
 <header class="header">
 
-    <div class="header-content">
+```
+<div class="header-content">
 
-        <div class="company-name">
-            MARELLI MOTHERSON AUTOMOTIVE LIGHTING INDIA PVT LTD
-        </div>
-
-        <h1>
-            Machine Digital Passport
-        </h1>
-
-        <p>
-            Digital Maintenance & Machine Information
-        </p>
-
-        <div class="header-status">
-
-            <span class="header-status-dot"></span>
-
-            DIGITAL SYSTEM ONLINE
-
-        </div>
-
+    <div class="company-name">
+        MARELLI MOTHERSON AUTOMOTIVE LIGHTING INDIA PVT LTD
     </div>
+
+    <h1>
+        Machine Digital Passport
+    </h1>
+
+    <p>
+        Digital Maintenance & Machine Information
+    </p>
+
+</div>
+```
 
 </header>
 
-
 <!-- =======================================================
      MAIN CONTENT
-======================================================= -->
+======================================================== -->
 
 <main class="container">
 
-
-<!-- =======================================================
-     MACHINE INFORMATION
-======================================================= -->
+```
+<!-- MACHINE INFORMATION -->
 
 <section class="card">
 
@@ -1538,7 +698,7 @@ body {
             </div>
 
             <div class="value">
-                Gluing Cell- 01 (HL-01)
+              Lense pressing & Gluing Cell- 01 (HL-01)
             </div>
 
         </div>
@@ -1551,7 +711,7 @@ body {
             </div>
 
             <div class="value">
-                Gluing Cell-01
+                Lense Pressing & Gluing Cell-01
             </div>
 
         </div>
@@ -1564,7 +724,7 @@ body {
             </div>
 
             <div class="value">
-                FIN DIEMME
+               NEXGEN ROBOTIC AUTOMATION & FIN DIEMME
             </div>
 
         </div>
@@ -1588,11 +748,12 @@ body {
 </section>
 
 
-<!-- =======================================================
+<!-- ===================================================
      PM STATUS
-======================================================= -->
+==================================================== -->
 
 <section class="card">
+
 
     <div class="section-header">
 
@@ -1689,9 +850,9 @@ body {
 </section>
 
 
-<!-- =======================================================
+<!-- ===================================================
      MACHINE MANUAL
-======================================================= -->
+==================================================== -->
 
 <section class="card manual-section">
 
@@ -1700,7 +861,7 @@ body {
     </div>
 
     <div class="manual-title">
-        Machine Manual
+        Gluing Cell Manual(FIN DIEMME)
     </div>
 
     <div class="manual-description">
@@ -1708,11 +869,87 @@ body {
     </div>
 
 
-    <!-- ===================================================
-         IMPORTANT:
-         B.pdf MUST remain in the SAME GitHub folder
-         as index.html
-    ==================================================== -->
+    <!-- IMPORTANT:
+         Keep A.pdf in the SAME GitHub repository folder
+         as this index.html file.
+    -->
+
+    <a
+        class="manual-button"
+        href="./A.pdf"
+        target="_blank"
+        rel="noopener"
+    >
+
+        <span>📖</span>
+
+        <span>  Gluing Cell Manual(FIN DIEMME)</span>
+
+        <span>↗</span>
+
+    </a>
+
+
+    <div class="note">
+        Document: A.pdf
+    </div>
+
+<div class="manual-icon">
+        📘
+    </div>
+
+    <div class="manual-title">
+       Lense pressing Manual (NEXGEN)
+    </div>
+
+    <div class="manual-description">
+        Access the latest machine operating & maintenance manual
+    </div>
+
+
+    <!-- IMPORTANT:
+         Keep D.pdf in the SAME GitHub repository folder
+         as this index.html file.
+    -->
+
+    <a
+        class="manual-button"
+        href="./D.pdf"
+        target="_blank"
+        rel="noopener"
+    >
+
+        <span>📖</span>
+
+        <span>Lense pressing Manual(NEXGEN)
+</span>
+
+        <span>↗</span>
+
+    </a>
+
+
+    <div class="note">
+        Document: D.pdf
+    </div>
+
+<div class="manual-icon">
+        📘
+    </div>
+
+    <div class="manual-title">
+       DYNAMIX TRAINING MODULE (Gluing Cell)
+    </div>
+
+    <div class="manual-description">
+        Access the latest machine operating & maintenance manual
+    </div>
+
+
+    <!-- IMPORTANT:
+         Keep B.pdf in the SAME GitHub repository folder
+         as this index.html file.
+    -->
 
     <a
         class="manual-button"
@@ -1723,7 +960,7 @@ body {
 
         <span>📖</span>
 
-        <span>OPEN MACHINE MANUAL</span>
+        <span> DYNAMIX TRAINING MODULE (Gluing Cell)</span>
 
         <span>↗</span>
 
@@ -1734,73 +971,63 @@ body {
         Document: B.pdf
     </div>
 
-</section>
+<div class="manual-icon">
+        📘
+    </div>
 
+    <div class="manual-title">
+       LOAD CELL Manual
+    </div>
+
+    <div class="manual-description">
+        Access the latest machine operating & maintenance manual
+    </div>
+
+
+    <!-- IMPORTANT:
+         Keep A.pdf in the SAME GitHub repository folder
+         as this index.html file.
+    -->
+
+    <a
+        class="manual-button"
+        href="./C.pdf"
+        target="_blank"
+        rel="noopener"
+    >
+
+        <span>📖</span>
+
+        <span>     LOAD CELL MANUAL</span>
+
+        <span>↗</span>
+
+    </a>
+
+
+    <div class="note">
+        Document: C.pdf
+    </div>
+
+</section>
 
 </main>
 
-
 <!-- =======================================================
      FOOTER
-======================================================= -->
+======================================================== -->
 
 <footer class="footer">
 
-    <div class="footer-line"></div>
+```
+<div class="footer-line"></div>
 
-    Machine Digital Passport
-    &nbsp;|&nbsp;
-    Maintenance Department
+Machine Digital Passport
+&nbsp;|&nbsp;
+Maintenance Department
+```
 
 </footer>
-
-
-<!-- =======================================================
-     BACK TO TOP
-======================================================= -->
-
-<a
-    href="#"
-    class="back-top"
-    aria-label="Back to top"
->
-    ↑
-</a>
-
-
-<!-- =======================================================
-     JAVASCRIPT
-======================================================= -->
-
-<script>
-
-/* Remove welcome screen interaction after animation */
-
-setTimeout(function () {
-
-    const welcome = document.getElementById("welcomeScreen");
-
-    if (welcome) {
-        welcome.style.pointerEvents = "none";
-    }
-
-}, 4300);
-
-
-/* Back to top */
-
-document.querySelector(".back-top").addEventListener("click", function(e) {
-
-    e.preventDefault();
-
-    window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-    });
-
-});
-
-</script>
 
 </body>
 </html>
